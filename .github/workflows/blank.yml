@@ -17,8 +17,7 @@ on:
       release_name:
 
 env:
-  STAGE: >
-    ${{ 
+  STAGE: ${{ 
       (inputs.event_name == 'release' && startsWith(inputs.release_name, 'kiva:') && 'kiva') ||
       (inputs.event_name == 'release' && !startsWith(inputs.release_name, 'kiva:') && 'prd') ||
       'stg'
